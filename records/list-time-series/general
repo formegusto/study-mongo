@@ -1,0 +1,12 @@
+timeseries> db.runCommand( {
+...    listCollections: 1,
+...    filter: { type: "timeseries" }
+... } )
+{
+  cursor: {
+    id: Long("0"),
+    ns: 'timeseries.$cmd.listCollections',
+    firstBatch: []
+  },
+  ok: 1
+}
