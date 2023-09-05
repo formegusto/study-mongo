@@ -65,3 +65,46 @@ timeseries> db.runCommand({ listCollections: 1 })
   },
   ok: 1
 }
+timeseries> db.createCollection(
+...     "weather24h",
+...     {
+...        timeseries: {
+...           timeField: "timestamp",
+...           metaField: "metadata",
+...           granularity: "hours"
+...        },
+...        expireAfterSeconds: 86400
+...     }
+... )
+{ ok: 1 }
+timeseries> db.weather24h.insertMany( [
+... {
+...    "metadata": { "sensorId": 5578, "type": "temperature" },
+...    "timestamp": new Date(),
+...    "temp": 12
+... }])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f788edcf11a5ceee5e327b") }
+}
+timeseries> db.createCollection(
+... "weather1h",
+... {
+...    timeseries: {
+...       timeField: "timestamp",
+...       metaField: "metadata",
+...       granularity: "hours"
+...    },
+...    expireAfterSeconds: 3600
+... })
+{ ok: 1 }
+timeseries> db.weather1h.insertMany( [
+... {
+...    "metadata": { "sensorId": 5578, "type": "temperature" },
+...    "timestamp": new Date(),
+...    "temp": 12
+... }])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f7894ecf11a5ceee5e327c") }
+}
