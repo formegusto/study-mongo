@@ -15,7 +15,11 @@ db.createUser({
   }]
 })
 
-db.createCollection("weather")
+db.createCollection("weather", {
+    timeseries: {
+        timeField: "timestamp",
+        metaField: "metadata"
+    }
+})
 
 EOF
-

@@ -1,0 +1,16 @@
+{
+  "name": "mongo-timeseries-col",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/formegusto/mongo-timeseries-col.git",
+  "author": "formegusto <formegusto@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx tsc && node dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {}
+}
