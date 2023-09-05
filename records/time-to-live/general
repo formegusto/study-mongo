@@ -1,0 +1,10 @@
+timeseries> db.createCollection("weather1m", {
+...   expireAfterSeconds: 60,
+... });
+MongoServerError: 'expireAfterSeconds' is only supported on time-series collections or when the 'clusteredIndex' option is specified
+
+/*
+아예 방법이 없지는 않드라
+일반적인 방법에서는 index를 생성해주고 진행함
+https://www.mongodb.com/docs/manual/tutorial/expire-data/
+*/
