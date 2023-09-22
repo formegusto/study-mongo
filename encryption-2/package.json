@@ -1,0 +1,13 @@
+{
+  "name": "encryption-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mongodb-client-encryption": "^6.0.0",
+    "mongoose": "^7.5.2"
+  }
+}
